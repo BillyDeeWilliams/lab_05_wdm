@@ -8,7 +8,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a,b){
+function sum(a,b){ //eslint-disable-line
   var sum = [];
   var s = a + b;
   sum[0] = s;
@@ -30,7 +30,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a,b){ 
+function multiply(a,b){ //eslint-disable-line
   var prod = [];
   var p = a * b;
   prod[0] = p;
