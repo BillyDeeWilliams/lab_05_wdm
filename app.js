@@ -134,9 +134,10 @@ function multiplyArray(testArray){ //eslint-disable-line
   }
   console.log(whatsInIt);//console check
   whatsInIt = whatsInIt.slice(0,-1); // take off last char in string , in this casem the last comma so that it matches the test conditions :"The numbers 2,3,4 have a product of 24."
-  var solutionString = 'The numbers ' + whatsInIt + 'have a poduct of ' + productTotal;
+  var solutionString = 'The numbers ' + whatsInIt + ' have a product of ' + productTotal + '.';
   multiplyArraySolution[1] = solutionString;
-
+  console.log(solutionString);
+  console.log(multiplyArraySolution[1]);
   return(multiplyArraySolution);
 
 }
