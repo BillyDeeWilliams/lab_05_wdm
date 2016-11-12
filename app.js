@@ -122,6 +122,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+  var multiplicationArraySolution = [];
+  var productTotal = 1;
+  for (var i = 0 ; i < testArray.length; i++){
+    productTotal = multiply(productTotal, testArray[i])[0];
+  }
+  multiplicationArraySolution[0] = productTotal; // pupulate first element of array to be returned with sum of input array
+  console.log(productTotal + ' is the product ' + multiplicationArraySolution[0] + ' should contain product total'); //console check
+
+  var whatsInIt = '';
+  for(var j = 0 ; j < testArray.length; j++) {
+    whatsInIt += testArray[j] + ',';// we want a comma after ever elment EXCEPT the last, I dunno how to do that so im gonna slice it off. (just in case, since we did not go over this in class, I googled it) CITE~~> John R Humphry's posts to the discussion on this page: https://css-tricks.com/snippets/javascript/trim-firstlast-characters-in-string/ <~~
+  }
+  console.log(whatsInIt);//console check
+  whatsInIt = whatsInIt.slice(0,-1); // take off last char in string , in this casem the last comma so that it matches the test conditions
+  var solutionString = whatsInIt + ' was passed in as an array of numbers, and ' + sumTotal + ' is their sum.';
+  solution[1] = solutionString;
+
+  return(solution);
 
 }
 
