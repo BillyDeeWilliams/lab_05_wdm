@@ -57,11 +57,26 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+  var s2a = 0;
+  var s2b = 0;
+  var p2a = 0;
+  var p2b = 0;
+  s2a = sum (a,b); //returns an array whoes firs element is the sum and stores for next calc
+  s2b = sum(s2a[0],c);//calc sum of c and the first element of the array resturned from summing a & b, store in var
+  p2a = multiply(a,b); //returns an array whoes firs element is the prod and stores for next calc
+  p2b = multiply(p2a[0],c);//calc product of c and the first element of the array resturned from calling multiply on a & b, store in var
+  var sam = []; // init empty answer array
+//populate array: [s, p 'sthird element sum string', 'fourth element prodct string']
+  sam[0] = s2b;
+  sam[1] = p2b;
+  sam[2] = a + ' and ' + b + ' and ' + c + ' sum to ' + s2b[0] + '.' ;
+  sam[3] = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + p2b[0] + '.';
+  console.log(sam);
+  return(sam);
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -79,12 +94,29 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
+  var solution = [];
+  var sumTotal = 0;
+  for (var i = 0 ; i < testArray.length; i++){
+    sumTotal = sumTotal + testArray[i]; //use sum
+  }
+  solution[0] = sumTotal; // pupulate first element of array to be returned with sum of input array
+  console.log(sumTotal + ' is the sum ' + solution[0] + ' should contain sum'); //console check
+
+  var whatsInIt = '';
+  for(var j = 0 ; j < testArray.length; j++) {
+    whatsInIt += testArray[j] + ',';// we want a comma after ever elment EXCEPT the last, I dunno how to do that so im gonna slice it off. (just in case, since we did not go over this in class, I googled it) CITE~~> John R Humphry's posts to the discussion on this page: https://css-tricks.com/snippets/javascript/trim-firstlast-characters-in-string/ <~~
+  }
+  console.log(whatsInIt);//console check
+  whatsInIt = whatsInIt.slice(0,-1); // take off last char in string , in this casem the last comma so that it matches the test conditions
+  var solutionString = whatsInIt + ' was passed in as an array of numbers, and ' + sumTotal + ' is their sum.';
+  solution[1] = solutionString;
+
+  return(solution);
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
