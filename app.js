@@ -83,8 +83,6 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 
-var testArray = [2,3,4]; //eslint-disable-line
-
 function sumArray(testArray){ //eslint-disable-line
   var solution = [];
   var sumTotal = 0;
@@ -122,10 +120,29 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+  var multiplyArraySolution = [];
+  var productTotal = 1;//initializ start to 1
+  for (var i = 0 ; i < testArray.length; i++){
+    productTotal = multiply(productTotal, testArray[i])[0];
+  }
+  multiplyArraySolution[0] = productTotal; // pupulate first element of array to be returned with sum of input array
+  console.log(productTotal + ' is the product ' + multiplyArraySolution[0] + ' should contain product total'); //console check
+
+  var whatsInIt = '';
+  for(var j = 0 ; j < testArray.length; j++) {
+    whatsInIt += testArray[j] + ',';// we want a comma after ever elment EXCEPT the last, I dunno how to do that so im gonna slice it off. (just in case, since we did not go over this in class, I googled it) CITE~~> John R Humphry's posts to the discussion on this page: https://css-tricks.com/snippets/javascript/trim-firstlast-characters-in-string/ <~~
+  }
+  console.log(whatsInIt);//console check
+  whatsInIt = whatsInIt.slice(0,-1); // take off last char in string , in this casem the last comma so that it matches the test conditions :"The numbers 2,3,4 have a product of 24."
+  var solutionString = 'The numbers ' + whatsInIt + ' have a product of ' + productTotal + '.';
+  multiplyArraySolution[1] = solutionString;
+  console.log(solutionString);
+  console.log(multiplyArraySolution[1]);
+  return(multiplyArraySolution);
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
