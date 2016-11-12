@@ -96,7 +96,7 @@ function sumArray(testArray){ //eslint-disable-line
   var solution = [];
   var sumTotal = 0;
   for (var i = 0 ; i < testArray.length; i++){
-    sumTotal = sumTotal + testArray[i]; //use sum
+    sumTotal = sum(sumTotal , testArray[i])[0]; //use sum *thanks goto meghan for seing that I was not
   }
   solution[0] = sumTotal; // pupulate first element of array to be returned with sum of input array
   console.log(sumTotal + ' is the sum ' + solution[0] + ' should contain sum'); //console check
